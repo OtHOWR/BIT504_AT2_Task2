@@ -3,5 +3,5 @@
  */
 
 public enum Player {
-	EMPTY, CROSS, NOUGHT
+	EMPTY, CROSS, NOUGHT, O
 }
