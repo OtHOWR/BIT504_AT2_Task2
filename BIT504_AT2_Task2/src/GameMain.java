@@ -67,20 +67,21 @@ public class GameMain extends JPanel implements MouseListener{
 		    // Run GUI code in Event Dispatch thread for thread safety.
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
 	         public void run() {
-				//create a main window to contain the panel
-				JFrame frame = new JFrame(TITLE);
-				
-				//TODO: create the new GameMain panel and add it to the frame
-						
-				
-				
-				//TODO: set the default close operation of the frame to exit_on_close
-		            
-				
-				frame.pack();             
-				frame.setLocationRelativeTo(null);
-				frame.setVisible(true);
-	         }
+					//create a main window to contain the panel
+					JFrame frame = new JFrame(TITLE);
+					
+					//Create the new GameMain panel and add it to the frame
+							
+					GameMain gameMain = new GameMain();
+					frame.add(gameMain);
+					
+					// Set the default close operation of the frame to exit_on_close
+			        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // default close operation set
+					
+					frame.pack();             
+					frame.setLocationRelativeTo(null);
+					frame.setVisible(true);
+		         }
 		 });
 	}
 	/** Custom painting codes on this JPanel */
@@ -95,15 +96,9 @@ public class GameMain extends JPanel implements MouseListener{
 		if (currentState == GameState.Playing) {          
 			statusBar.setForeground(Color.BLACK);          
 			if (currentPlayer == Player.Cross) {   
-			
-				//TODO: use the status bar to display the message "X"'s Turn
-
-				
+				statusBar.setText("X's Turn")
 			} else {    
-				
-				//TODO: use the status bar to display the message "O"'s Turn
-
-				
+				statusBar.setText("O's Turn")	
 			}       
 			} else if (currentState == GameState.Draw) {          
 				statusBar.setForeground(Color.RED);          
@@ -184,8 +179,8 @@ public class GameMain extends JPanel implements MouseListener{
 			initGame();            
 		}   
 		
-		//TODO: redraw the graphics on the UI          
-           
+		// GUI BRANCH
+		repaint();
 	}
 		
 	
