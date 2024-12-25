@@ -172,7 +172,7 @@ public class GameMain extends JPanel implements MouseListener{
 		}   
 		// GUI BRANCH
 
-repaint();
+	repaint();
 	}
 	@Override
 	public void mousePressed(MouseEvent e) {
