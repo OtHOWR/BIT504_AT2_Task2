@@ -82,6 +82,7 @@ public class GameMain extends JPanel implements MouseListener{
 		// Set status bar message
 		if (currentState == GameState.PLAYING) {          
 			statusBar.setForeground(Color.BLACK);          
+
 			if (currentPlayer == Player.CROSS) {
 				statusBar.setText("X's Turn");
 			} else {
@@ -130,6 +131,7 @@ public class GameMain extends JPanel implements MouseListener{
 						break;
 					}
 				}
+
 				
 			} else if (board.isDraw ()) {	
 				// Set the currentstate to the draw gamestate
@@ -138,6 +140,7 @@ public class GameMain extends JPanel implements MouseListener{
 			// Otherwise no change to current state of playing
 		}
 		
+
 	/** Event handler for the mouse click on the JPanel. If selected cell is valid and Empty then current player is added to cell content.
 	*  UpdateGame is called which will call the methods to check for winner or Draw. if none then GameState remains playing.
 	*  If win or Draw then call is made to method that resets the game board.  Finally a call is made to refresh the canvas so that new symbol appears*/
@@ -168,7 +171,8 @@ public class GameMain extends JPanel implements MouseListener{
 			initGame();            
 		}   
 		// GUI BRANCH
-		repaint();
+
+repaint();
 	}
 	@Override
 	public void mousePressed(MouseEvent e) {
@@ -186,4 +190,5 @@ public class GameMain extends JPanel implements MouseListener{
 	public void mouseExited(MouseEvent e) {
 		// Auto-generated, event not used
 	}
+
 }
